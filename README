@@ -1,5 +1,6 @@
 # COMP1927-ass2
 Simple Search Engines
+https://www.cse.unsw.edu.au/~cs1927/17s1/ass/ass02/Ass2.html
 
 Part-1: Graph structure-based search engine, you need to create a graph structure that represents a hyperlink structure of given collection of "web pages" and for each page (node in your graph) calculate PageRank and other graph properties. You need to create "inverted index" that provides a list of pages for every word in a given collection of pages. Your graph-structure based search engine will use this inverted index to find pages where query term(s) appear and rank these pages using their PageRank values.
 
