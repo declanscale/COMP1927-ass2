@@ -14,13 +14,20 @@
 #include <string.h>
 #include "linkedList.h"
 #include "graph.h"
-
+define Max_URL_len 100
 
 struct urlList* GetCollection(){
   
   struct urlList* head = NULL;
+  FILE* fp;
+  char url[Max_URL_len]
+  fp = fopen("collection.txt","r");
+  fscanf(fp,"%s",url);
+  int i = 0;
   
-  while() {
+  while(!feof(fp) && i<maxIeration ) {
+    fscanf(fp,"%s",url);
+    create_node(char *url, struct urlList *next) {
     
   }
 }
