@@ -57,7 +57,7 @@ Graph GetGraph(UL list) {
       } else {
         diff = strcmp(tempstr0, "#end");
         if(diff != 0) { //add link
-          
+          addEdge(g, temp->url, tempstr0);
         }
       }
     }
