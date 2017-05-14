@@ -1,8 +1,6 @@
 typedefine struct urlList{
-
  char *url
  struct urlList* next
-  
 }UL;
 
 
