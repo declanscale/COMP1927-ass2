@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "linkedList.h"
-#include "Graph.h"
+#include "graph.h"
 
 
 struct urlList* GetCollection(){
@@ -40,7 +40,7 @@ Graph GetGraph(UL list) {
     FILE *fp = fopen (tempurl, "r");
     if(fp == NULL) {
       printf("Error opening file\n");
-      return -1;
+      return NULL;
     }
     while(diff) { //read "#start Section-1"
       if(fscanf(fp, "%s %s", tempstr0, tempstr1) == 0) { //if scanf nothing
@@ -68,4 +68,5 @@ Graph GetGraph(UL list) {
       isvalid = 0;
     }
   }
+  return g;
 }
