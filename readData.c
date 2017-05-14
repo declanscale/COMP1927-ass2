@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Graph.h"
-#include "linkedList.c"
 #include "linkedList.h"
 
 struct urlList* GetCollection(){
