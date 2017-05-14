@@ -13,9 +13,18 @@
 #include <stdlib.h>
 #inlcude <string.h>
 #include "Graph.h"
+#include "linkedList.c"
+#include "linkedList.h"
 
-
-
+struct urlList* GetCollection(){
+  
+  struct urlList* head = NULL;
+  
+  while() {
+    
+  }
+}
+ 
 Graph GetGraph(UL list) {
   if (list == NULL || list->num == 0) return NULL;
   UL temp = list->first;
@@ -32,4 +41,5 @@ Graph GetGraph(UL list) {
     } else {
       isvalid = 0;
     }
+  }
 }
