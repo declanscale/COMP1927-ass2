@@ -1,7 +1,13 @@
-typedefine struct urlList{
+typedefine struct urlNode{
  char *url
- struct urlList* next
+ struct urlNode* next
 }UL;
+
+typedefine struct urlListRep{
+ int num;
+ struct urlNode* first
+ struct urlNode* last
+}urlList;
 
 
 struct node *create_node(int data, struct urlList *next);
