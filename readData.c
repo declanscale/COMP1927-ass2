@@ -10,4 +10,14 @@
 //read <url>.txt file, and update inverted index
 
 
-# include
+#include "linkedList.c"
+#include "linkedList.h"
+
+struct urlList* GetCollection(){
+  
+  struct urlList* head = NULL;
+  
+  while()
+ 
+  
+}
