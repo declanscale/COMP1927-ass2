@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#inlcude <string.h>
+#include <string.h>
 #include "Graph.h"
 #include "linkedList.c"
 #include "linkedList.h"
