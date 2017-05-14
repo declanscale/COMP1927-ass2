@@ -12,8 +12,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Graph.h"
 #include "linkedList.h"
+#include "Graph.h"
+
 
 struct urlList* GetCollection(){
   
