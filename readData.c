@@ -28,9 +28,12 @@ struct urlList* GetCollection(){
   while(!feof(fp)) {
     fegets（char *line, int n, FILE* fp);
     char* url[Max_url_len];
-    url = strtok()；
-    while()
-    create_node(char *url, struct urlList *next) {
+    url = strtok(line," ")；
+    while(url!=NULL){
+     head =  
+      
+    }
+    
     
   }
 }
