@@ -16,26 +16,36 @@
 #include "graph.h"
 define Max_URL_len 80
 define Max_line_len 80
-
+  
+/*  
+struct node *create_node(int data, struct urlList *next);
+struct node *last(struct urlList *head);
+struct node *append(struct urlList *head, int value); 
+*/  
+  
 struct urlList* GetCollection(){
   
   struct urlList* head = NULL;
   FILE* fp;
   char* line[Max_lineL_len];
   int n = Max_line_len;
+  char* url[Max_url_len];
+  
   fp = fopen("collection.txt","r");
   
   while(!feof(fp)) {
+    
     fegets（char *line, int n, FILE* fp);
-    char* url[Max_url_len];
     url = strtok(line," ")；
+      
     while(url!=NULL){
-     head =  
+      
+      head =  append(head, url);
+      url = strok(line," ");
       
     }
-    
-    
   }
+  
 }
  
 Graph GetGraph(UL list) {
