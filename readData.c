@@ -41,7 +41,7 @@ struct urlList* GetCollection(){
     while(url!=NULL){
       
       head =  append(head, url);
-      url = strok(line," ");
+      url = strtok(line," ");
       
     }
   }
