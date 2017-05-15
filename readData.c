@@ -50,11 +50,11 @@ urlNode GetCollection(){
  
 Graph GetGraph(urlNode list) {
   if (list == NULL) return NULL;
-  UL temp = list->url;
+  urlNode temp = list;
   char *tempurl;
   char *tempstr0;
   char *tempstr1;
-  int maxnum = countNumOfUrl();
+  int maxnum = countNumOfUrl(list);
   Graph g = newGraph(maxnum); //Create	empty	graph
   int diff = 1;
   int isvalid = 1;
@@ -95,6 +95,6 @@ Graph GetGraph(urlNode list) {
   return g;
 }
 
-GetInvertedList(List_of_Urls) {
+GetInvertedList(urlNode list) {
   
 }
