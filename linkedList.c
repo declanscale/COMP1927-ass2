@@ -51,7 +51,7 @@ struct urlList *append(struct urlList *head, char *url) {
 int countNode(struct urlList *head){
     
     int num = 0;
-    struct urlList *curr = head;
+    struct urlNode *curr = head;
     
     if(head->next == NULL){
         return 0;
