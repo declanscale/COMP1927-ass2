@@ -49,8 +49,8 @@ urlNode GetCollection(){
 }
  
 Graph GetGraph(urlNode list) {
-  if (list == NULL || list->num == 0) return NULL;
-  UL temp = list->first;
+  if (list == NULL) return NULL;
+  UL temp = list->url;
   char *tempurl;
   char *tempstr0;
   char *tempstr1;
