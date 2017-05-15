@@ -1,4 +1,3 @@
-
 typedef struct urlNode{
  char *url
  struct urlNode* next
