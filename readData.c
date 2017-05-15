@@ -23,9 +23,9 @@ struct node *last(struct urlList *head);
 struct node *append(struct urlList *head, int value); 
 */  
   
-struct urlList* GetCollection(){
+urlNode GetCollection(){
   
-  struct urlList* head = NULL;
+  urlNode head = NULL;
   FILE* fp;
   char* line[Max_lineL_len];
   int n = Max_line_len;
@@ -48,13 +48,14 @@ struct urlList* GetCollection(){
   
 }
  
-Graph GetGraph(UL list) {
+Graph GetGraph(urlNode list) {
   if (list == NULL || list->num == 0) return NULL;
   UL temp = list->first;
   char *tempurl;
   char *tempstr0;
   char *tempstr1;
-  Graph g = newGraph(list->num); //Create	empty	graph
+  int maxnum = countNumOfUrl();
+  Graph g = newGraph(maxnum); //Create	empty	graph
   int diff = 1;
   int isvalid = 1;
   while(isvalid) { //open url file
