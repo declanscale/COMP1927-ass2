@@ -77,3 +77,7 @@ Graph GetGraph(UL list) {
   }
   return g;
 }
+
+GetInvertedList(List_of_Urls) {
+  
+}
