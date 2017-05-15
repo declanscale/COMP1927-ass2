@@ -46,3 +46,23 @@ struct urlList *append(struct urlList *head, char *url) {
         return head;
     }
 }
+
+int countNode(struct urlList *head){
+    
+    int num = 0;
+    struct urlList *curr = head;
+    
+    if(head->next == NULL){
+        return 0;
+    }else{
+        
+        while(head->next !=NULL){
+            n++;
+            curr = curr->next;
+        }
+        
+        return n;
+        
+    }
+    
+}
