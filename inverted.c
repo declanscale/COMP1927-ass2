@@ -6,9 +6,8 @@
 #include <stdlib.h>
 #include "readData.h"
 #include "linkedList.h"
-#include "graph.h"
 #include "BSTree.h"
 
-GetInvertedList(urlNode list) {
-  
-}
+urlNode list = GetCollection();
+GetInvertedList(list);
+outputInvertedList(
