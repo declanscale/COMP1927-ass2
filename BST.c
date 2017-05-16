@@ -72,14 +72,5 @@ void BSTreeInfix(BSTree t)
 
 BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
     
-	if (t == NULL)
-		return newBSTNode(newWord);
-	else if (newWord[0] < t->word[0])
-		t->left = BSTreeInsert(t->left, newWord);
-	else if (newWord > t->value)
-		t->right = BSTreeInsert(t->right, newWord);
-	else // (v == t->value)
-		/* don't insert duplicates */;
-	return t;
 }    // not sure if word[0] works 
 
