@@ -1,6 +1,3 @@
-// BSTree.h ... interface to binary search tree ADT
-// Written by John Shepherd, March 2013
-
 #ifndef BSTREE_H
 #define BSTREE_H
 

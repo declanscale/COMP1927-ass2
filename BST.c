@@ -66,8 +66,3 @@ BSTree BSTreeInsert(BSTree t, char* newWord){
 	return t;
 }    // not sure if word[0] works 
 
-
-
-
-
-
