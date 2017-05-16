@@ -40,7 +40,15 @@ void dropBSTree(BSTree t){
 void showBSTreeNode(BSTree t)
 {
 	if (t == NULL) return;
-	printf("%d ", t->value);
+	FILE *fp = fopen("invertedIndex.txt", "a");
+	fprintf(fp, "%s", t->word);
+	fclose(fp);
+	
+	if(fp == NULL){
+		printf("Error opening file\n");
+		return NULL;
+	}
+	
 }
 
 // print values in infix order
