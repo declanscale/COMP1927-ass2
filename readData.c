@@ -96,6 +96,46 @@ Graph GetGraph(urlNode list) {
   return g;
 }
 
-GetInvertedList(urlNode list) {
-  
+BSTLink GetInvertedList(urlNode list) {
+  if (list == NULL) return NULL;
+  BSTLink invertedlist = newBSTree();
+  int diff = 1;
+  int isvalid = 1;
+  while(isvalid) { //open url file
+    strcpy(tempurl, temp->url); //debug: maybe appending on the string
+    strcat (tempurl, ".txt");
+    FILE *fp = fopen (tempurl, "r");
+    if(fp == NULL) {
+      printf("Error opening file\n");
+      return NULL;
+    }
+    while(diff) { //read "#start Section-1"
+      if(fscanf(fp, "%s %s", tempstr0, tempstr1) == 0) { //if scanf nothing
+        break;
+      } else {
+        diff = strcmp(tempstr0, "#start");
+        diff += strcmp(tempstr1, "Section-2");
+      }
+    }
+    diff = 1;
+    while(diff) { //read url
+      if(fscanf(fp, "%s", tempstr0) == 0) { //if scanf nothing  //debug: maybe appending on the string
+        break;
+      } else {
+        diff = strcmp(tempstr0, "#end");
+        if(diff != 0) { //add link
+          invertedlist = BSTreeInsert(invertedlist, tempstr0);
+        }
+      }
+    }
+    fclose(fp);
+    if (temp->next != NULL) {
+      temp = temp->next;
+    } else {
+      isvalid = 0;
+    }
+  }
+  return invertedlist;
 }
+
+  
