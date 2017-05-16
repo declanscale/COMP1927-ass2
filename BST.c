@@ -9,12 +9,13 @@ typedef struct BSTNode {
 	BSTLink left, right;
 } BSTNode;
 
-static BSTLink newBSTNode(char word){
+static BSTLink newBSTNode(char* word, char* url){
     
     BSTLink new = malloc(sizeof(BSTNode));
 	assert(new != NULL);
-	new->word = NULL;
+	new->word = word;
 	new->left = new->right = NULL;
+	new->url = append(newNode, url);
 	return new;
 
 }
