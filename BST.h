@@ -16,13 +16,14 @@ void dropBSTree(BSTree);
 void showBSTree(BSTree);
 
 // insert a new value into a BSTree
-BSTree BSTreeInsert(BSTree, int);
-BSTree BSTreeInsertI(BSTree, int);
+BSTree BSTreeInsert(BSTree, char*);
+//BSTree BSTreeInsertI(BSTree, char*);
 // delete a value from a BSTree
-BSTree BSTreeDelete(BSTree, int);
+BSTree BSTreeDelete(BSTree, char*);
+void BSTreeInfix(BSTree t);
 
 
 // generic traversal
-void BSTreeTraverse(BSTree, Visit, char *);
+//void BSTreeTraverse(BSTree, Visit, char *);
 
 #endif
