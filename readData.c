@@ -125,8 +125,7 @@ BSTLink GetInvertedList(urlNode list) {
       } else {
         diff = strcmp(tempstr0, "#end");
         if(diff != 0) { //add link
-          invertedlist = BSTreeInsert(invertedlist, tempstr0);
-          BSTreeInsertURL(temp->url);
+          invertedlist = BSTreeInsert(invertedlist, tempstr0, temp->url);
         }
       }
     }
