@@ -13,10 +13,5 @@ void outputInvertedList(BSTLink invertedlist);
 void invertedIndex() {
   urlNode list = GetCollection();
   BSTLink invertedlist = GetInvertedList(list);
-  BSTreeInfix(invertedlist);
-}
-
-void outputInvertedList(BSTLink invertedlist) {
-  FILE *fp = fopen("invertedIndex.txt", "w");
-  BSTreeInfix(BSTree t)
+  BSTreeInfix(invertedlist); //output to file
 }
