@@ -37,18 +37,27 @@ void dropBSTree(BSTree t){
 }
 
 
-void showBSTreeNode(BSTree t)
+void showBSTreeNode(BSTree t) //output to file
 {
 	if (t == NULL) return;
+	struct urlNode* tempurl = t->url;
 	FILE *fp = fopen("invertedIndex.txt", "a");
-	fprintf(fp, "%s", t->word);
-	fclose(fp);
-	
 	if(fp == NULL){
 		printf("Error opening file\n");
 		return NULL;
 	}
-	
+	fprintf(fp, "%s  ", t->word);
+	int isvalid = 1;
+	while(isvalid) {
+		fprintf(fp, "%s ", tempurl->url);
+		if(tempurl->next != NULL) {
+			tempurl = tempurl->next;
+		} else {
+			isvalid = 0;
+		}
+	}
+	fprintf(fp, "\n");
+	fclose(fp);
 }
 
 // print values in infix order
@@ -56,7 +65,7 @@ void BSTreeInfix(BSTree t)
 {
 	if (t == NULL) return;
 	BSTreeInfix(t->left);
-	showBSTreeNode(t);
+	showBSTreeNode(t); //output to file
 	BSTreeInfix(t->right);
 }
 
