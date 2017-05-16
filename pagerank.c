@@ -6,7 +6,6 @@
 #include "readData.h"
 #include "linkedList.h"
 #include "graph.h"
-#include "BSTree.h"
 
 void PageRank(d, diffPR, maxIterations) {
   urlNode list = GetCollection();
