@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 struct urlList* GetCollection();
-Graph GetGraph(UL list);
-GetInvertedList(List_of_Urls);
+Graph GetGraph(urlNode list);
+BSTLink GetInvertedList(urlNode list);
 
 #endif
