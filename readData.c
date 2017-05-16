@@ -14,6 +14,7 @@
 #include <string.h>
 #include "linkedList.h"
 #include "graph.h"
+#include "BSTree.h"
 define Max_URL_len 80
 define Max_line_len 80
   
