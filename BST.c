@@ -61,7 +61,7 @@ void BSTreeInfix(BSTree t)
 }
 
 
-BSTree BSTreeInsert(BSTree t, char* newWord){
+BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
     
 	if (t == NULL)
 		return newBSTNode(newWord);
