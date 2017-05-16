@@ -9,5 +9,6 @@
 #include "BSTree.h"
 
 void PageRank(d, diffPR, maxIterations) {
-  
+  urlNode list = GetCollection();
+  Graph graph = GetGraph(list);
 }
