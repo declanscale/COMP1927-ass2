@@ -21,14 +21,6 @@ BSTree BSTreeInsertI(BSTree, int);
 // delete a value from a BSTree
 BSTree BSTreeDelete(BSTree, int);
 
-// check whether a value is in a BSTree
-int BSTreeFind(BSTree, int);
-// check whether a value is in a BSTree
-int BSTreeFindI(BSTree, int);
-// compute depth of BSTree
-int BSTreeDepth(BSTree);
-// count #nodes in BSTree
-int BSTreeNumNodes(BSTree);
 
 // generic traversal
 void BSTreeTraverse(BSTree, Visit, char *);
