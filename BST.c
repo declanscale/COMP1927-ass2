@@ -71,8 +71,7 @@ BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
 		else if(strcmp(newWord,t->word)>0)
 			BSTreeInsert(t->right,newWord,url);
 		else
-			
-			while(t->url->next != NULL)
+			append()
 				
 		
 	}
