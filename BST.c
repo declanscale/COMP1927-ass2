@@ -9,11 +9,12 @@ typedef struct BSTNode {
 	BSTLink left, right;
 } BSTNode;
 
-static BSTLink newBSTNode(char word){
+static BSTLink newBSTNode(char word,char* url){
     
     BSTLink new = malloc(sizeof(BSTNode));
 	assert(new != NULL);
-	new->word = NULL;
+	new->word = word;
+	new->url = url;
 	new->left = new->right = NULL;
 	return new;
 
@@ -21,9 +22,6 @@ static BSTLink newBSTNode(char word){
 
 
 BSTree newBSTree(){
-    
-    
-    
 	return NULL;
 }
 
@@ -61,16 +59,22 @@ void BSTreeInfix(BSTree t)
 }
 
 
+
+
 BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
     
 	if (t == NULL)
-		return newBSTNode(newWord);
-	else if (newWord[0] < t->word[0])
-		t->left = BSTreeInsert(t->left, newWord);
-	else if (newWord > t->value)
-		t->right = BSTreeInsert(t->right, newWord);
-	else // (v == t->value)
-		/* don't insert duplicates */;
-	return t;
+		return newBSTNode(newWord, url);
+	else{
+		if(strcmp(newWord,t->word)<0)
+			BSTreeInsert(t->left,newWord,url);
+		else if(strcmp(newWord,t->word)>0)
+			BSTreeInsert(t->right,newWord,url);
+		else
+			
+			while(t->url->next != NULL)
+				
+		
+	}
 }    // not sure if word[0] works 
 
