@@ -60,7 +60,7 @@ void BSTreeInfix(BSTree t)
 
 
 
-
+// use recursive function to insert node and add the url list at the same time
 BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
     
 	if (t == NULL)
@@ -71,9 +71,9 @@ BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
 		else if(strcmp(newWord,t->word)>0)
 			BSTreeInsert(t->right,newWord,url);
 		else
-			append()
-				
-		
+			append(t->url,url);				
 	}
-}    // not sure if word[0] works 
+	
+	return t;
+}   
 
