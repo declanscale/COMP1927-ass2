@@ -6,5 +6,6 @@
 struct urlList* GetCollection();
 Graph GetGraph(urlNode list);
 BSTLink GetInvertedList(urlNode list);
+void RemoveSpaces(char* source);
 
 #endif

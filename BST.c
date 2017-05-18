@@ -11,20 +11,17 @@ typedef struct BSTNode {
 
 static BSTLink newBSTNode(char* word, char* url){
     
-    BSTLink new = malloc(sizeof(BSTNode));
+  BSTLink new = malloc(sizeof(BSTNode));
 	assert(new != NULL);
 	new->word = word;
 	new->left = new->right = NULL;
-	new->url = append(newNode, url);
+	new->url->next = append(new->url, url);
 	return new;
 
 }
 
 
 BSTree newBSTree(){
-    
-    
-    
 	return NULL;
 }
 
@@ -71,7 +68,21 @@ void BSTreeInfix(BSTree t)
 }
 
 
+
+// use recursive function to insert node and add the url list at the same time
 BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
-    
-}    // not sure if word[0] works 
+  
+	if (t == NULL)
+		return newBSTNode(newWord, url);
+	else{
+		if(strcmp(newWord,t->word)<0)
+			BSTreeInsert(t->left,newWord,url);
+		else if(strcmp(newWord,t->word)>0)
+			BSTreeInsert(t->right,newWord,url);
+		else
+			append(t->url,url);				
+	}
+	
+	return t;
+}   
 

@@ -36,18 +36,33 @@ urlNode GetCollection(){
   
   while(!feof(fp)) {
     
-    fegets（char *line, int n, FILE* fp);
-    url = strtok(line," ")；
+    line = fegets(char *line, int n, FILE* fp);
+    url = strtok(line,"url")；
       
     while(url!=NULL){
-      
+      RemoveSpaces(url);
       head =  append(head, url);
-      url = strtok(line," ");
-      
+      url = strtok(line,"url");    
     }
   }
   
+  return head;
+  
 }
+
+void RemoveSpaces(char* source)
+{
+  char* i = source;
+  char* j = source;
+  while(*j != 0)
+  {
+    *i = *j++;
+    if(*i != ' ')
+      i++;
+  }
+  *i = 0;
+}
+
  
 Graph GetGraph(urlNode list) {
   if (list == NULL) return NULL;
