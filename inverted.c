@@ -9,7 +9,7 @@
 #include "BSTree.h"
 
 int main(int argc, char *argv[]) {
-    struct urlList* list = GetCollection();
+    urlList list = GetCollection();
     BSTLink invertedlist = GetInvertedList(list);
     BSTreeInfix(invertedlist); //output to file
     return 0;
