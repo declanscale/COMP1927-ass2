@@ -1,10 +1,12 @@
 //create a linked list of URLs
+#include "linkedList.h"
 
 
-struct urlList *create_node(char *url, struct urlList *next) {
-    struct urlList *n;
 
-    n = malloc(sizeof (struct node));
+urlNode create_node(char *url, struct urlNode *next) {
+    struct urlNode *n;
+
+    n = malloc(sizeof (struct urlNode));
     if (n == NULL) {
         fprintf(stderr, "out of memory\n");
         exit(1);
@@ -17,12 +19,12 @@ struct urlList *create_node(char *url, struct urlList *next) {
 // return pointer to last node in list
 // NULL is returned if list is empty
 
-struct urlList *last(struct node *head) {
+urlNode last(urlNode head) {
     if (head == NULL) {
         return NULL;
     }
 
-    struct urlList *n = head;
+    urlNode n = head;
     while (n->next != NULL) {
         n = n->next;
     }
@@ -34,9 +36,9 @@ struct urlList *last(struct node *head) {
 // create a new list node containing value
 // and append it to end of list
 
-struct urlList *append(struct urlList *head, char *url) {
+urlNode append(urlNode head, char *url) {
     // new node will be last in list, so next field is NULL
-    struct urlList *n =  create_node(url, NULL);
+    urlNode n =  create_node(url, NULL);
     if (head == NULL) {
         // new node is now  head of the list
         return n;
@@ -48,22 +50,22 @@ struct urlList *append(struct urlList *head, char *url) {
     }
 }
 
-int countNode(struct urlList *head){
-    
+int countNode(urlNode head){
+
     int num = 0;
     struct urlNode *curr = head;
-    
+
     if(head->next == NULL){
         return 0;
     }else{
-        
+
         while(head->next !=NULL){
-            n++;
+            num++;
             curr = curr->next;
         }
-        
-        return n;
-        
+
+        return num;
+
     }
-    
+
 }

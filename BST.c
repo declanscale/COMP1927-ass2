@@ -1,53 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "linkedList.h"
+#include "linkedList.c"
+#include <string.h>
 
-typedef struct BSTNode *BSTLink;
+typedef struct BSTNode *BSTNode;
 
-typedef struct BSTNode {
+struct BSTNode {
 	char* word;
-	struct urlNode* url;
-	BSTLink left, right;
-} BSTNode;
+	struct urlNode* urlHead;
+	BSTNode left, right;
+};
 
-static BSTLink newBSTNode(char* word, char* url){
-    
-  BSTLink new = malloc(sizeof(BSTNode));
-	assert(new != NULL);
+static BSTNode newBSTNode(char* word, char* newUrl){
+
+    BSTNode new = malloc(sizeof(BSTNode));
+	//assert(new != NULL);
 	new->word = word;
 	new->left = new->right = NULL;
-	new->url->next = append(new->url, url);
+	new->urlHead->next = NULL;
+    new->urlHead = append(new->urlHead, newUrl);
 	return new;
 
 }
 
-
+/*
 BSTree newBSTree(){
 	return NULL;
 }
+*/
+/*
+void dropBSTree(BSTNode t){
 
-
-void dropBSTree(BSTree t){
-    
 	if (t == NULL) return;
 	dropBSTree(t->left);
 	dropBSTree(t->right);
 	free(t);
 }
 
-
-void showBSTreeNode(BSTree t) //output to file
+*/
+void showBSTreeNode(BSTNode t) //output to file
 {
 	if (t == NULL) return;
-	struct urlNode* tempurl = t->url;
+	urlNode tempurl = t->urlHead;
 	FILE *fp = fopen("invertedIndex.txt", "a");
 	if(fp == NULL){
 		printf("Error opening file\n");
-		return NULL;
+		return;
 	}
 	fprintf(fp, "%s  ", t->word);
 	int isvalid = 1;
 	while(isvalid) {
-		fprintf(fp, "%s ", tempurl->url);
+		fprintf(fp, "%s ", tempurl);
 		if(tempurl->next != NULL) {
 			tempurl = tempurl->next;
 		} else {
@@ -59,7 +63,7 @@ void showBSTreeNode(BSTree t) //output to file
 }
 
 // print values in infix order
-void BSTreeInfix(BSTree t)
+void BSTreeInfix(BSTNode t)
 {
 	if (t == NULL) return;
 	BSTreeInfix(t->left);
@@ -70,8 +74,8 @@ void BSTreeInfix(BSTree t)
 
 
 // use recursive function to insert node and add the url list at the same time
-BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
-  
+BSTNode BSTreeInsert(BSTNode t, char* newWord, char* url){
+
 	if (t == NULL)
 		return newBSTNode(newWord, url);
 	else{
@@ -80,9 +84,8 @@ BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
 		else if(strcmp(newWord,t->word)>0)
 			BSTreeInsert(t->right,newWord,url);
 		else
-			append(t->url,url);				
+			append(t->urlHead,url);
 	}
-	
-	return t;
-}   
 
+	return t;
+}

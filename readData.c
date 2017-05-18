@@ -1,14 +1,3 @@
-//List_of_Urls <- GetCollection()
-//Create a set (list) of urls to process by reading	data from	file “collection.txt”
-//Graph	g	<- GetGraph(List_of_Urls)
-//Create	empty	graph	(use graph ADT in say	graph.h and	graph.c)
-//For	each url in the	above	list	
-//read <url>.txt file,	and	update graph by adding a node and outgoing links	
-//InvertedList <- GetInvertedList(List_of_Urls )
-//Create empty inverted list (use	say	List of	lists, BST where values	are	lists, etc)
-//For	each	url in	List_of_Urls
-//read <url>.txt file, and update inverted index
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,37 +6,37 @@
 #include "BSTree.h"
 define Max_URL_len 80
 define Max_line_len 80
-  
-/*  
+
+/*
 struct node *create_node(int data, struct urlList *next);
 struct node *last(struct urlList *head);
-struct node *append(struct urlList *head, int value); 
-*/  
-  
+struct node *append(struct urlList *head, int value);
+*/
+
 urlNode GetCollection(){
-  
+
   urlNode head = NULL;
   FILE* fp;
   char* line[Max_lineL_len];
   int n = Max_line_len;
   char* url[Max_url_len];
-  
+
   fp = fopen("collection.txt","r");
-  
+
   while(!feof(fp)) {
-    
+
     line = fegets(char *line, int n, FILE* fp);
     url = strtok(line,"url")；
-      
+
     while(url!=NULL){
       RemoveSpaces(url);
       head =  append(head, url);
-      url = strtok(line,"url");    
+      url = strtok(line,"url");
     }
   }
-  
+
   return head;
-  
+
 }
 
 void RemoveSpaces(char* source)
@@ -63,7 +52,7 @@ void RemoveSpaces(char* source)
   *i = 0;
 }
 
- 
+
 Graph GetGraph(urlNode list) {
   if (list == NULL) return NULL;
   urlNode temp = list;
@@ -153,5 +142,3 @@ BSTLink GetInvertedList(urlNode list) {
   }
   return invertedlist;
 }
-
-  

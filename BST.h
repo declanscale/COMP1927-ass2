@@ -1,9 +1,11 @@
+
 #ifndef BSTREE_H
 #define BSTREE_H
 
-typedef struct BSTNode *BSTree;
+/*
+//typedef struct BSTNode *BSTLink;
 
-typedef void (*Visit)(struct BSTNode *);
+//typedef void (*Visit)(struct BSTNode *);
 
 // create an empty BSTree
 BSTree newBSTree();
@@ -22,5 +24,14 @@ void BSTreeInfix(BSTree t);
 
 // generic traversal
 //void BSTreeTraverse(BSTree, Visit, char *);
+*/
+
+struct BSTNode newBSTNode(char* word, char* newUrl);
+void showBSTreeNode(struct BSTNode t);
+void BSTreeInfix(struct BSTNode t);
+struct BSTNode BSTreeInsert(struct BSTNode t, char* newWord, char* url);
+
+
+
 
 #endif

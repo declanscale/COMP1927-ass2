@@ -1,11 +1,13 @@
+
 #ifndef READDATA_H
 #define READDATA_H
 
 #include <stdio.h>
+#include "graph.h"
+#include "linkedList.h"
 
-struct urlList* GetCollection();
-Graph GetGraph(urlNode list);
-BSTLink GetInvertedList(urlNode list);
-void RemoveSpaces(char* source);
+struct urlNode GetCollection();
+struct GraphRep GetGraph(urlNode list);
+struct BSTNode GetInvertedList(urlNode list);
 
 #endif

@@ -1,3 +1,4 @@
+
 // graph.c ... Graph of strings (adjacency matrix)
 // Written by John Shepherd, September 2015
 
@@ -10,13 +11,14 @@
 #define strEQ(g,t) (strcmp((g),(t)) == 0)
 
 typedef unsigned char Num;
+//typedef struct GraphRep Graph;
 
 typedef struct GraphRep {
 	int   nV;
 	int   maxV;
 	char  **vertex;
 	Num   **edges;
-} GraphRep;
+}GraphRep;
 
 // Function signatures
 

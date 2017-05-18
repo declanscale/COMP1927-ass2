@@ -1,8 +1,10 @@
+
 // graph.h ... Interface to Graph of strings
 // Written by John Shepherd, September 2015
 
 #ifndef GRAPH_H
 #define GRAPH_H
+#include "readData.h"
 
 typedef struct GraphRep *Graph;
 

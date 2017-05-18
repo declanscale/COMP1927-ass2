@@ -1,3 +1,4 @@
+
 // Queue.h ... implementation of Queue ADT
 // assumes that Item is an assignable type
 // (e.g. int, pointer) defined in Queue.h
@@ -61,7 +62,7 @@ void showQueue(Queue Q)
 	free(Q);
 }
 
-// add item at end of Queue 
+// add item at end of Queue
 void QueueJoin(Queue Q, Item it)
 {
 	assert(Q != NULL);
@@ -94,4 +95,3 @@ int QueueIsEmpty(Queue Q)
 {
 	return (Q->head == NULL);
 }
-

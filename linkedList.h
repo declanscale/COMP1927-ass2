@@ -1,10 +1,20 @@
-typedef struct urlNode{
- char *url
- struct urlNode* next
-}urlNode;
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 
 
-struct node *create_node(char* url, struct urlNode *next);
-struct node *last(struct urlNode *head);
-struct node *append(struct urlNode *head, char* url);
+struct urlNode{
+ char *url;
+ struct urlNode* next;
+};
+
+typedef struct urlNode* urlNode;
+
+
+urlNode create_node(char* url, struct urlNode *next);
+urlNode last(struct urlNode *head);
+urlNode append(struct urlNode *head, char* url);
 int countNumOfUrl(struct urlNode* head);
+
+
+
+#endif
