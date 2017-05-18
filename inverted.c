@@ -8,10 +8,9 @@
 #include "linkedList.h"
 #include "BSTree.h"
 
-void outputInvertedList(BSTLink invertedlist);
-
-void invertedIndex() {
-  urlNode list = GetCollection();
-  BSTLink invertedlist = GetInvertedList(list);
-  BSTreeInfix(invertedlist); //output to file
+int main(int argc, char *argv[]) {
+    urlNode list = GetCollection();
+    BSTLink invertedlist = GetInvertedList(list);
+    BSTreeInfix(invertedlist); //output to file
+    return 0;
 }
