@@ -1,7 +1,7 @@
 typedef struct urlNode{
- char *url
- struct urlNode* next
-}urlNode;
+    char *url;
+    struct urlNode* next;
+} urlNode;
 
 
 struct node *create_node(char* url, struct urlNode *next);
