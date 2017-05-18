@@ -113,6 +113,7 @@ Graph GetGraph(urlNode list) {
 
 BSTLink GetInvertedList(urlNode list) {
   if (list == NULL) return NULL;
+  char *tempurl;
   BSTLink invertedlist = newBSTree();
   int diff = 1;
   int isvalid = 1;
@@ -139,7 +140,7 @@ BSTLink GetInvertedList(urlNode list) {
       } else {
         diff = strcmp(tempstr0, "#end");
         if(diff != 0) { //add link
-          invertedlist = BSTreeInsert(invertedlist, tempstr0);
+          invertedlist = BSTreeInsert(invertedlist, tempstr0, temp->url);
         }
       }
     }

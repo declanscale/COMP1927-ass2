@@ -9,13 +9,13 @@ typedef struct BSTNode {
 	BSTLink left, right;
 } BSTNode;
 
-static BSTLink newBSTNode(char word,char* url){
+static BSTLink newBSTNode(char* word, char* url){
     
-    BSTLink new = malloc(sizeof(BSTNode));
+  BSTLink new = malloc(sizeof(BSTNode));
 	assert(new != NULL);
 	new->word = word;
-	new->url = url;
 	new->left = new->right = NULL;
+	new->url->next = append(new->url, url);
 	return new;
 
 }
@@ -35,18 +35,27 @@ void dropBSTree(BSTree t){
 }
 
 
-void showBSTreeNode(BSTree t)
+void showBSTreeNode(BSTree t) //output to file
 {
 	if (t == NULL) return;
+	struct urlNode* tempurl = t->url;
 	FILE *fp = fopen("invertedIndex.txt", "a");
-	fprintf(fp, "%s", t->word);
-	fclose(fp);
-	
 	if(fp == NULL){
 		printf("Error opening file\n");
 		return NULL;
 	}
-	
+	fprintf(fp, "%s  ", t->word);
+	int isvalid = 1;
+	while(isvalid) {
+		fprintf(fp, "%s ", tempurl->url);
+		if(tempurl->next != NULL) {
+			tempurl = tempurl->next;
+		} else {
+			isvalid = 0;
+		}
+	}
+	fprintf(fp, "\n");
+	fclose(fp);
 }
 
 // print values in infix order
@@ -54,7 +63,7 @@ void BSTreeInfix(BSTree t)
 {
 	if (t == NULL) return;
 	BSTreeInfix(t->left);
-	showBSTreeNode(t);
+	showBSTreeNode(t); //output to file
 	BSTreeInfix(t->right);
 }
 
@@ -62,7 +71,7 @@ void BSTreeInfix(BSTree t)
 
 // use recursive function to insert node and add the url list at the same time
 BSTree BSTreeInsert(BSTree t, char* newWord, char* url){
-    
+  
 	if (t == NULL)
 		return newBSTNode(newWord, url);
 	else{
