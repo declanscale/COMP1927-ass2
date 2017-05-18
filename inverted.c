@@ -1,4 +1,3 @@
-
 //Read data from a given collection of pages in collection.txt
 //and generates an "inverted index" that provides a list (set) of
 //urls for every word in a given collection of pages
@@ -10,10 +9,9 @@
 #include "BST.h"
 #include "graph.h"
 
-void outputInvertedList(struct BSTNode invertedlist);
-
-void invertedIndex() {
+int main(int argc, char* argv[]) {
   struct urlNode list = GetCollection();
   struct BSTNode invertedlist = GetInvertedList(list);
   BSTreeInfix(invertedlist); //output to file
+  return 0;
 }

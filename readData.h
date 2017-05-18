@@ -1,4 +1,3 @@
-
 #ifndef READDATA_H
 #define READDATA_H
 
