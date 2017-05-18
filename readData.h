@@ -3,9 +3,13 @@
 
 #include <stdio.h>
 
-struct urlList GetCollection();
-struct GraphRep GetGraph(struct urlList list);
-struct BSTNode GetInvertedList(struct urlList list);
+typedef struct GraphRep* Graph;
+typedef struct BSTNode* BSTLink;
+typedef struct urlNode* urlList;
+
+urlList GetCollection();
+Graph GetGraph(urlList list);
+BSTLink GetInvertedList(urlList list);
 void RemoveSpaces(char* source);
 
 #endif
