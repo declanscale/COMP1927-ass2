@@ -5,12 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+/*
 struct urlNode{
  char* url;
  struct urlNode* next;
 };
-
+*/
 typedef struct urlNode* urlNode;
 
 //===================================================
