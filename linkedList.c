@@ -16,12 +16,12 @@ typedef struct urlNode* urlNode;
 //===================================================
 //copy from linkedList.h
 //===================================================
-urlNode create_node(char* url, struct urlNode *next);
-urlNode last(struct urlNode *head);
-urlNode append(struct urlNode *head, char* url);
-int countNode(struct urlNode* head);
-urlNode deleteNode(urlNode head, urlNode node);
-urlNode GetCollection();//not in linkedlist.h
+//urlNode create_node(char* url, struct urlNode *next);
+//urlNode last(struct urlNode *head);
+//urlNode append(struct urlNode *head, char* url);
+//int countNode(struct urlNode* head);
+//urlNode deleteNode(urlNode head, urlNode node);
+//urlNode GetCollection();//not in linkedlist.h
 //====================================================
 
 
