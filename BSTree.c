@@ -19,7 +19,7 @@ static BSTNode newBSTNode(char* word, char* newUrl){
 	new->word = word;
 	new->left = new->right = NULL;
 	new->urlHead->next = NULL;
-    new->urlHead = append(new->urlHead, newUrl);
+        new->urlHead = append(new->urlHead, newUrl);
 	return new;
 
 }
@@ -29,7 +29,7 @@ BSTree newBSTree(){
 	return NULL;
 }
 */
-/*
+
 void dropBSTree(BSTNode t){
 
 	if (t == NULL) return;
@@ -38,7 +38,7 @@ void dropBSTree(BSTNode t){
 	free(t);
 }
 
-*/
+
 void showBSTreeNode(BSTNode t) //output to file
 {
 	if (t == NULL) return;
