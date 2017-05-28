@@ -15,41 +15,21 @@ struct node *append(struct urlList *head, int value);
 
 urlNode GetCollection(){
 
-  urlNode head = NULL;
-  FILE* fp;
-  char* line[Max_lineL_len];
-  int n = Max_line_len;
-  char* url[Max_url_len];
+    urlNode head = NULL;
+    FILE *fp;
+    char urlBuff[10];
+    fp = fopen("collection.txt","r");
 
-  fp = fopen("collection.txt","r");
+    while(!feof(fp)) { //while not end of the file
 
-  while(!feof(fp)) {
-
-    line = fegets(char *line, int n, FILE* fp);
-    url = strtok(line,"url")；
-
-    while(url!=NULL){
-      RemoveSpaces(url);
-      head =  append(head, url);
-      url = strtok(line,"url");
+        fscanf(fp,"%s",urlBuff);
+        
+        head = append(head,urlBuff);
+        
     }
-  }
 
-  return head;
+    return head;
 
-}
-
-void RemoveSpaces(char* source)
-{
-  char* i = source;
-  char* j = source;
-  while(*j != 0)
-  {
-    *i = *j++;
-    if(*i != ' ')
-      i++;
-  }
-  *i = 0;
 }
 
 
