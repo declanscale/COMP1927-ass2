@@ -1,18 +1,46 @@
 //create a linked list of URLs
-#include "linkedList.h"
+//#include "linkedList.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+struct urlNode{
+ char* url;
+ struct urlNode* next;
+};
+
+typedef struct urlNode* urlNode;
+
+//===================================================
+//copy from linkedList.h
+//===================================================
+urlNode create_node(char* url, struct urlNode *next);
+urlNode last(struct urlNode *head);
+urlNode append(struct urlNode *head, char* url);
+int countNode(struct urlNode* head);
+urlNode deleteNode(urlNode head, urlNode node);
+urlNode GetCollection();//not in linkedlist.h
+//====================================================
 
 
 
-urlNode create_node(char *url, struct urlNode *next) {
-    struct urlNode *n;
 
-    n = malloc(sizeof (struct urlNode));
+
+
+urlNode create_node(char* url, struct urlNode *nextNode) {
+    //urlNode n;
+    
+
+  struct urlNode* n = malloc(sizeof(struct urlNode));
     if (n == NULL) {
         fprintf(stderr, "out of memory\n");
         exit(1);
     }
-    n->url = url;
-    n->next = next;
+    
+    n->url = strdup(url);
+    n->next = nextNode;
     return n;
 }
 
@@ -21,13 +49,16 @@ urlNode create_node(char *url, struct urlNode *next) {
 
 urlNode last(urlNode head) {
     if (head == NULL) {
+ 
         return NULL;
     }
 
     urlNode n = head;
     while (n->next != NULL) {
+   
         n = n->next;
     }
+    
     return n;
 }
 
@@ -36,7 +67,7 @@ urlNode last(urlNode head) {
 // create a new list node containing value
 // and append it to end of list
 
-urlNode append(urlNode head, char *url) {
+urlNode append(urlNode head, char* url) {
     // new node will be last in list, so next field is NULL
     urlNode n =  create_node(url, NULL);
     if (head == NULL) {
@@ -52,21 +83,20 @@ urlNode append(urlNode head, char *url) {
 
 int countNode(urlNode head){
 
-    int num = 0;
-    struct urlNode *curr = head;
-
-    if(head->next == NULL){
-        return 0;
-    }else{
-
-        while(head->next !=NULL){
-            num++;
-            curr = curr->next;
-        }
-
-        return num;
-
+   int len = 0;
+    
+    
+    urlNode n = head;
+    
+    while(n->next!=NULL){
+        len++;
+        n = n->next;
     }
+    
+    
+    return len+1;
+
+    
 
 }
 
