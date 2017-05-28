@@ -13,8 +13,8 @@ typedef struct urlNode* urlNode;
 urlNode create_node(char* url, struct urlNode *next);
 urlNode last(struct urlNode *head);
 urlNode append(struct urlNode *head, char* url);
-int countNumOfUrl(struct urlNode* head);
-
+int countNode(struct urlNode* head);
+urlNode deleteNode(urlNode head, urlNode node);
 
 
 #endif
