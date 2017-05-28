@@ -69,3 +69,19 @@ int countNode(urlNode head){
     }
 
 }
+
+deleteNode(urlNode head, urlNode node){
+    struct urlNode *curr = head;
+    struct urlNode *tempNode = NULL;
+    
+    while(curr != NULL){
+        if(curr->url == node->url){
+               tempNode = curr;
+               curr->next = curr->next->next;
+               free(tempNode);
+        }
+        curr = curr->next;
+    }
+    
+}
+
