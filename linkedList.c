@@ -70,7 +70,7 @@ int countNode(urlNode head){
 
 }
 
-deleteNode(urlNode head, urlNode node){
+urlNode deleteNode(urlNode head, urlNode node){
     struct urlNode *curr = head;
     struct urlNode *tempNode = NULL;
     
@@ -82,6 +82,8 @@ deleteNode(urlNode head, urlNode node){
         }
         curr = curr->next;
     }
+    
+    return head;
     
 }
 
